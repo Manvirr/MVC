@@ -10,11 +10,13 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+    
     public class AlbumsController : Controller
     {
         private MvcMusicStoreContext db = new MvcMusicStoreContext();
 
         // GET: Albums
+        [Route("Album/All")]
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist);
@@ -22,6 +24,7 @@ namespace MvcMusicStore.Controllers
         }
 
         // GET: Albums/Details/5
+        [Route("Album/{id:int}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -98,6 +101,7 @@ namespace MvcMusicStore.Controllers
         }
 
         // GET: Albums/Delete/5
+        [Route("Album/delete/{id:int}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
