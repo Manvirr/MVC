@@ -39,6 +39,7 @@ namespace MvcMusicStore.Controllers
         }
 
         // GET: Albums/Create
+        
         public ActionResult Create()
         {
             ViewBag.ArtistID = new SelectList(db.Artists, "ArtistID", "Name");
