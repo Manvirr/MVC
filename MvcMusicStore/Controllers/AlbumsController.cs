@@ -23,6 +23,15 @@ namespace MvcMusicStore.Controllers
             return View(albums.ToList());
         }
 
+        //THIS ACTION IS CUSTOM CREATED
+        public ActionResult DisplayByArtist()
+        {
+            //controller logic comes here
+
+            return View();
+        }
+
+
         // GET: Albums/Details/5
         [Route("Album/{id:int}")]
         public ActionResult Details(int? id)
